@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>Teachers' Day Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f3f1ec;
+    color: #102a43;
+
+    /* IMPORTANT:
+       Prevent page scrolling */
+    overflow: hidden;
+}
+
+/* MAIN SCREEN */
+
+.invitation {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* subtle background */
+
+.invitation::before {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(16, 42, 67, 0.025);
+
+    left: -250px;
+    top: -150px;
+}
+
+.invitation::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(196, 154, 74, 0.035);
+
+    right: -220px;
+    bottom: -180px;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 100%;
+
+    padding: 22px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.college {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #d8dde2;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+
+    color: #102a43;
+}
+
+.college-name {
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: .3px;
+}
+
+.college-tagline {
+    font-size: 9px;
+
+    color: #82909d;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    margin-top: 2px;
+}
+
+.header-right {
+    text-align: right;
+
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+
+    font-size: 12px;
+
+    color: #5e7182;
+}
+
+
+/* CONTENT */
+
+.content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 5px 20px 15px;
+
+    position: relative;
+    z-index: 2;
+
+    min-height: 0;
+}
+
+
+/* TEACHER PHOTO */
+
+.photo-container {
+    width: clamp(105px, 19vh, 155px);
+    height: clamp(105px, 19vh, 155px);
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffffff 65%,
+        #d7b76a
+    );
+
+    box-shadow:
+        0 10px 30px rgba(16, 42, 67, .14);
+
+    flex-shrink: 0;
+}
+
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* TEACHER NAME */
+
+.teacher-name {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(23px, 4vh, 34px);
+
+    line-height: 1.15;
+
+    margin-top: 8px;
+
+    color: #102a43;
+}
+
+.department {
+    color: #748391;
+
+    font-size: clamp(11px, 1.8vh, 14px);
+
+    margin-top: 3px;
+}
+
+
+/* DIVIDER */
+
+.divider {
+    width: 45px;
+    height: 2px;
+
+    background: #c49a4a;
+
+    margin: clamp(8px, 1.5vh, 14px) auto;
+}
+
+
+/* INVITATION */
+
+.invited {
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 9px;
+
+    color: #6f7e8b;
+
+    margin-bottom: 4px;
+}
+
+.event-title {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(28px, 5.2vh, 48px);
+
+    line-height: 1.08;
+
+    color: #102a43;
+
+    max-width: 700px;
+}
+
+.event-title span {
+    color: #c49a4a;
+}
+
+.description {
+    font-family: "Playfair Display", serif;
+
+    color: #748391;
+
+    font-size: clamp(12px, 2vh, 16px);
+
+    line-height: 1.4;
+
+    max-width: 520px;
+
+    margin-top: 7px;
+}
+
+
+/* EVENT INFORMATION */
+
+.details {
+    width: min(720px, 100%);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: clamp(10px, 2vh, 18px);
+
+    border: 1px solid #e3e6e8;
+
+    background: #fafaf9;
+}
+
+.detail {
+    padding: clamp(9px, 1.5vh, 15px) 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.detail:not(:last-child) {
+    border-right: 1px solid #e3e6e8;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #eef2f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #102a43;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+}
+
+.label {
+    text-align: left;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #8995a0;
+}
+
+.value {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(11px, 1.7vh, 14px);
+
+    font-weight: 600;
+
+    color: #102a43;
+
+    margin-top: 1px;
+}
+
+
+/* BUTTON */
+
+.button {
+    margin-top: clamp(10px, 2vh, 18px);
+
+    border: none;
+
+    background: #102a43;
+
+    color: white;
+
+    padding: clamp(10px, 1.8vh, 14px) 30px;
+
+    min-width: 280px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+    transition: .25s ease;
+
+    box-shadow:
+        0 7px 18px rgba(16,42,67,.15);
+}
+
+.button:hover {
+    background: #1d4465;
+
+    transform: translateY(-2px);
+}
+
+.button span {
+    margin-left: 8px;
+}
+
+
+/* BOTTOM MESSAGE */
+
+.gratitude {
+    margin-top: auto;
+
+    padding-top: clamp(8px, 1.5vh, 14px);
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    color: #687988;
+
+    font-size: clamp(11px, 1.8vh, 14px);
+}
+
+
+/* GOLD LINE */
+
+.bottom-line {
+    width: 35px;
+    height: 2px;
+
+    background: #c49a4a;
+
+    margin: 6px auto 0;
+}
+
+
+/* POPUP */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(16,42,67,.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-box {
+    width: min(380px, 100%);
+
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.popup-box h2 {
+    font-family: "Playfair Display", serif;
+
+    color: #102a43;
+
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    color: #71808e;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.close {
+    margin-top: 20px;
+
+    border: none;
+
+    background: #102a43;
+
+    color: white;
+
+    padding: 10px 25px;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px 18px 5px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .detail {
+        justify-content: flex-start;
+
+        padding: 8px 15px;
+    }
+
+    .detail:not(:last-child) {
+        border-right: none;
+
+        border-bottom: 1px solid #e3e6e8;
+    }
+
+    .icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .value {
+        font-size: 12px;
+    }
+
+    .button {
+        width: 90%;
+
+        min-width: 0;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-height: 650px) {
+
+    .header {
+        padding-top: 10px;
+    }
+
+    .content {
+        padding-top: 0;
+    }
+
+    .photo-container {
+        width: 90px;
+        height: 90px;
+    }
+
+    .teacher-name {
+        font-size: 22px;
+    }
+
+    .event-title {
+        font-size: 27px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .divider {
+        margin: 5px auto;
+    }
+
+    .details {
+        margin-top: 7px;
+    }
+
+    .button {
+        margin-top: 8px;
+    }
+
+    .gratitude {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="invitation">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="college">
+
+            <div class="logo">
+                AC
+            </div>
+
+            <div>
+                <div class="college-name" id="collegeName">
+                    ABC COLLEGE
+                </div>
+
+                <div class="college-tagline">
+                    Learn • Innovate • Lead
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+            Great Teachers<br>
+            Build Greater Futures
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <section class="content">
+
+        <!-- TEACHER PHOTO -->
+
+        <div class="photo-container">
+
+            <img
+                id="teacherPhoto"
+                class="teacher-photo"
+                src="teacher.jpg"
+                alt="Teacher"
+            >
+
+        </div>
+
+
+        <!-- TEACHER -->
+
+        <h1
+            class="teacher-name"
+            id="teacherName"
+        >
+            Prof. Anjali Sharma
+        </h1>
+
+
+        <p
+            class="department"
+            id="department"
+        >
+            Department of Computer Science & Engineering
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <!-- EVENT -->
+
+        <p class="invited">
+            You are warmly invited to
+        </p>
+
+
+        <h2 class="event-title">
+
+            Teachers' Day
+            <span>&</span>
+            Engineering Day<br>
+
+            Celebration
+
+        </h2>
+
+
+        <p class="description">
+            A special gathering to express our gratitude
+            for your guidance, support and inspiration.
+        </p>
+
+
+        <!-- DETAILS -->
+
+        <div class="details">
+
+            <div class="detail">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <div>
+                    <div class="label">
+                        Date
+                    </div>
+
+                    <div
+                        class="value"
+                        id="eventDate"
+                    >
+                        15 September 2026
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="icon">
+                    🕐
+                </div>
+
+                <div>
+                    <div class="label">
+                        Time
+                    </div>
+
+                    <div
+                        class="value"
+                        id="eventTime"
+                    >
+                        10:00 AM onwards
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="icon">
+                    📍
+                </div>
+
+                <div>
+                    <div class="label">
+                        Venue
+                    </div>
+
+                    <div
+                        class="value"
+                        id="eventVenue"
+                    >
+                        Main Auditorium
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            class="button"
+            onclick="showMessage()"
+        >
+            We Look Forward to Your Presence
+            <span>→</span>
+        </button>
+
+
+        <!-- GRATITUDE -->
+
+        <div class="gratitude">
+
+            “Thank you for inspiring us to build
+            a better tomorrow.”
+
+            <div class="bottom-line"></div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- POPUP -->
+
+<div
+    class="popup"
+    id="popup"
+    onclick="closeOutside(event)"
+>
+
+    <div class="popup-box">
+
+        <h2>
+            We Await Your Presence
+        </h2>
+
+        <p id="popupText">
+            It would be our privilege to celebrate
+            this special occasion with you.
+        </p>
+
+        <button
+            class="close"
+            onclick="closeMessage()"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   EDIT YOUR INVITATION HERE
+   ===================================================== */
+
+const CONFIG = {
+
+    college: "Zeal College of Engineering",
+
+    teacher: {
+
+        name: "Prof. Lata Arjun",
+
+        
+           
+
+        photo:
+            "kv.jpg"
+    },
+
+    event: {
+
+        date:
+            "15 September 2026",
+
+        time:
+            "10:00 AM onwards",
+
+        venue:
+            "Main Auditorium"
+    }
+
+};
+
+
+/* =====================================================
+   LOAD INFORMATION
+   ===================================================== */
+
+document.getElementById("collegeName")
+    .textContent = CONFIG.college;
+
+document.getElementById("teacherName")
+    .textContent = CONFIG.teacher.name;
+
+document.getElementById("department")
+    .textContent = CONFIG.teacher.department;
+
+document.getElementById("teacherPhoto")
+    .src = CONFIG.teacher.photo;
+
+document.getElementById("eventDate")
+    .textContent = CONFIG.event.date;
+
+document.getElementById("eventTime")
+    .textContent = CONFIG.event.time;
+
+document.getElementById("eventVenue")
+    .textContent = CONFIG.event.venue;
+
+
+/* =====================================================
+   POPUP
+   ===================================================== */
+
+function showMessage() {
+
+    document.getElementById("popupText")
+        .textContent =
+        `Dear ${CONFIG.teacher.name},
+         it would be our privilege to celebrate
+         this special occasion with you.`;
+
+    document.getElementById("popup")
+        .classList.add("show");
+}
+
+
+function closeMessage() {
+
+    document.getElementById("popup")
+        .classList.remove("show");
+}
+
+
+function closeOutside(event) {
+
+    if (event.target.id === "popup") {
+        closeMessage();
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
